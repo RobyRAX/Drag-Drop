@@ -256,8 +256,10 @@ public class TouchObjectDetector : MonoBehaviour
         {
             if(_isMovable)
             {
+                Vector3 newPos = new Vector3(hit.point.x, selectedSpawnObj.transform.position.y, hit.point.z);
+
                 selectedSpawnObj.GetComponent<Rigidbody>().Sleep();
-                selectedSpawnObj.transform.position = hit.point + Vector3.up;
+                selectedSpawnObj.transform.position = newPos;
             }
         }
     }
